@@ -18,12 +18,13 @@ nav > #containerButtons{
     justify-content: space-around;
     
     width: 20%;
-    height: 10%;
+    height: auto;
 
+    align-items: center;
 }
 
 .button{
-    height: 50px;
+    height: auto;
     width: auto;
     padding: 10px;
     font-family: 'Times New Roman', Times, serif;
@@ -38,8 +39,46 @@ nav div button:hover{
 }
 
 header{
-
-    margin-top: 10%;
     border: indigo 1px solid;
-    height: 50%;
+    height: 200px;
+    width: 60%;
+    margin: 10% auto;
 }
+
+header #boxTexto{
+    display: flex;
+    align-items: baseline;
+    text-align: center;
+    margin: 5% auto;
+
+    width: 500px;
+
+    font-size: 28pt;
+
+    border: #b3d8f8 1px solid;
+    border-radius: 10px;
+
+    padding: 5px 10px;
+
+    background-color: rgb(214, 231, 247)
+}
+
+
+header button{
+    box-shadow: none;
+    display: flex;
+    font-size: 28pt;
+    margin: 10px 40%;
+
+ /*    background-color: rgb(175, 206, 235); */
+
+    border-radius: 10px;
+    border: 1px solid rgb(191, 224, 255);
+    
+  
+}
+
+h1{
+    font-size: 28pt;
+}
+
