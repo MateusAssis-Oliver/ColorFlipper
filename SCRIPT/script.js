@@ -17,7 +17,7 @@ const colorFlipper = {
 
             hexDecimal: {
 
-                elementSist: ['1', '2', '3', '4', '5', '6', '7', '8', '9,', 'A', 'B', 'C', 'D', 'E', 'F']
+                elementSist: ['0','1', '2', '3', '4', '5', '6', '7', '8', '9,', 'A', 'B', 'C', 'D', 'E', 'F']
             },
             simp: {
                 elementSist: ['red', 'black', 'brue']
@@ -36,9 +36,26 @@ const colorFlipper = {
 
     colorRodon: (eleColor) => {
 
+        let color = '#',
+            tamMaximoColor = 6,
+            n_aleatorio = null
+
+        for(let indes_i = 0; indes_i < tamMaximoColor;indes_i++){
+
+
+            n_aleatorio = Math.floor(Math.random() * eleColor.length),
+            color+= eleColor[n_aleatorio];
+            
+        }
+
+        console.log(color)
+
+
+         
 
     },
 
+    /* Inicializando as tegs que irão ser usadas */
     get: () => {
 
         this.buttonClick = document.getElementById('buttonClikckMe');
@@ -50,18 +67,25 @@ const colorFlipper = {
         }
     },
 
+    /* Dando funcionalidades para os botons */
     set: () => {
 
-        buttonClick.addEventListener('click',colorFlipper.show)
+        buttonClick.addEventListener('click', colorFlipper.show)
 
-        buttonClickNumberingSystem.hex.addEventListener('click',(e)=>{
+        buttonClickNumberingSystem.hex.addEventListener('click', (e) => {
 
-            console.log( grupoSysten = e.target.id)
+            grupoSysten = e.target.id
+
+            let a = colorFlipper.numberingSystem(grupoSysten);
+
+            console.log(a)
+
+
         })
 
-        buttonClickNumberingSystem.simp.addEventListener('click',(e)=>{
+        buttonClickNumberingSystem.simp.addEventListener('click', (e) => {
 
-            console.log( grupoSysten = e.target.id)
+            console.log(grupoSysten = e.target.id)
         })
     },
 
