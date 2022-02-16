@@ -28,7 +28,7 @@ const colorFlipper = {
 
             if (tSystem === `${key}`) {
 
-                return typeSystem[key]
+                return typeSystem[key].elementSist
             }
         }
 
@@ -36,22 +36,21 @@ const colorFlipper = {
 
     colorRodon: (eleColor) => {
 
-        let color = '#',
+        let colorH = '#',
             tamMaximoColor = 6,
             n_aleatorio = null
 
+            console.log('colorRodon')
+            console.log(eleColor)
+
         for(let indes_i = 0; indes_i < tamMaximoColor;indes_i++){
-
-
+            
             n_aleatorio = Math.floor(Math.random() * eleColor.length),
-            color+= eleColor[n_aleatorio];
+            colorH+= eleColor[n_aleatorio];
             
         }
 
-        console.log(color)
-
-
-         
+        this.color = colorH;
 
     },
 
@@ -76,16 +75,27 @@ const colorFlipper = {
 
             grupoSysten = e.target.id
 
+            /* Ação ao clicar o buttom Hex na tela HTML */
             let a = colorFlipper.numberingSystem(grupoSysten);
 
-            console.log(a)
-
-
+            colorFlipper.colorRodon(a)
         })
 
+        /* Ação ao clicar o buttom simp na tela HTML */
         buttonClickNumberingSystem.simp.addEventListener('click', (e) => {
+            
+            let grupoSysten = e.target.id ,
+                a = colorFlipper.numberingSystem(grupoSysten),
+                n_aleatorio = '',
+                tamMaximoColor = 6,
+                colorS;
 
-            console.log(grupoSysten = e.target.id)
+            for(let indes_i = 0; indes_i < tamMaximoColor;indes_i++){
+            
+                n_aleatorio = Math.floor(Math.random() * a.length),
+                colorS+= a[n_aleatorio];
+                
+            }
         })
     },
 
@@ -95,6 +105,7 @@ const colorFlipper = {
         console.log(this.boxBory)
         console.log(this.buttonClickNumberingSystem)
         console.log(this.grupoSysten)
+        console.log(this.color)
 
     },
 
